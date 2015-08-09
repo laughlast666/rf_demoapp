@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20150809 10:54:00.027" generator="Robot 2.8.5 (Python 2.7.7 on win32)">
+<suite source="G:\workspace\rf_demoapp\login_tests" id="s1" name="Login Tests">
+<suite source="G:\workspace\rf_demoapp\login_tests\invalid_login.txt" id="s1-s1" name="Invalid Login">
+<kw type="setup" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:00.362" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:04.684" starttime="20150809 10:54:00.361"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20150809 10:54:04.719" starttime="20150809 10:54:04.684"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20150809 10:54:04.719" starttime="20150809 10:54:04.719"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:04.803" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:04.803" starttime="20150809 10:54:04.720"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:04.803" starttime="20150809 10:54:00.361"></status>
+</kw>
+<test id="s1-s1-t1" name="Invalid Username">
+<kw type="setup" name="resource.Go To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:04.806" level="INFO">Opening url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:04.848" starttime="20150809 10:54:04.805"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:04.860" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:04.861" starttime="20150809 10:54:04.848"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:04.861" starttime="20150809 10:54:04.805"></status>
+</kw>
+<kw type="kw" name="Login With Invalid Credentials Should Fail">
+<doc></doc>
+<arguments>
+<arg>invalid</arg>
+<arg>${VALID PASSWD}</arg>
+</arguments>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:04.864" level="INFO">Typing text 'invalid' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:05.191" starttime="20150809 10:54:04.863"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.191" starttime="20150809 10:54:04.862"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.193" level="INFO">Typing text 'mode' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:05.281" starttime="20150809 10:54:05.193"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.281" starttime="20150809 10:54:05.192"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.283" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.375" starttime="20150809 10:54:05.282"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.376" starttime="20150809 10:54:05.282"></status>
+</kw>
+<kw type="kw" name="resource.Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.403" level="INFO">Current location is 'http://localhost:7272/html/error.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.403" starttime="20150809 10:54:05.376"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.417" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.417" starttime="20150809 10:54:05.403"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.417" starttime="20150809 10:54:05.376"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.418" starttime="20150809 10:54:04.861"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:05.418" critical="yes" starttime="20150809 10:54:04.804"></status>
+</test>
+<test id="s1-s1-t2" name="Invalid Password">
+<kw type="setup" name="resource.Go To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.420" level="INFO">Opening url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:05.461" starttime="20150809 10:54:05.420"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.472" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.472" starttime="20150809 10:54:05.461"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.473" starttime="20150809 10:54:05.419"></status>
+</kw>
+<kw type="kw" name="Login With Invalid Credentials Should Fail">
+<doc></doc>
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>invalid</arg>
+</arguments>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.475" level="INFO">Typing text 'demo' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:05.559" starttime="20150809 10:54:05.475"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.559" starttime="20150809 10:54:05.474"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.560" level="INFO">Typing text 'invalid' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:05.659" starttime="20150809 10:54:05.560"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.659" starttime="20150809 10:54:05.559"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.661" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.837" starttime="20150809 10:54:05.660"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.838" starttime="20150809 10:54:05.660"></status>
+</kw>
+<kw type="kw" name="resource.Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.850" level="INFO">Current location is 'http://localhost:7272/html/error.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.850" starttime="20150809 10:54:05.839"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.861" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.861" starttime="20150809 10:54:05.851"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.861" starttime="20150809 10:54:05.838"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.862" starttime="20150809 10:54:05.473"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:05.862" critical="yes" starttime="20150809 10:54:05.418"></status>
+</test>
+<test id="s1-s1-t3" name="Invalid Username And Password">
+<kw type="setup" name="resource.Go To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.864" level="INFO">Opening url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:05.908" starttime="20150809 10:54:05.864"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.924" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:05.925" starttime="20150809 10:54:05.908"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:05.925" starttime="20150809 10:54:05.863"></status>
+</kw>
+<kw type="kw" name="Login With Invalid Credentials Should Fail">
+<doc></doc>
+<arguments>
+<arg>invalid</arg>
+<arg>whatever</arg>
+</arguments>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:05.927" level="INFO">Typing text 'invalid' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:06.034" starttime="20150809 10:54:05.927"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.034" starttime="20150809 10:54:05.926"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.035" level="INFO">Typing text 'whatever' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:06.142" starttime="20150809 10:54:06.035"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.142" starttime="20150809 10:54:06.034"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.144" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.324" starttime="20150809 10:54:06.143"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.324" starttime="20150809 10:54:06.143"></status>
+</kw>
+<kw type="kw" name="resource.Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.336" level="INFO">Current location is 'http://localhost:7272/html/error.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.337" starttime="20150809 10:54:06.325"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.347" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.347" starttime="20150809 10:54:06.337"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.347" starttime="20150809 10:54:06.324"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.347" starttime="20150809 10:54:05.925"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:06.348" critical="yes" starttime="20150809 10:54:05.862"></status>
+</test>
+<test id="s1-s1-t4" name="Empty Username">
+<kw type="setup" name="resource.Go To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.350" level="INFO">Opening url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:06.390" starttime="20150809 10:54:06.350"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.403" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.403" starttime="20150809 10:54:06.390"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.403" starttime="20150809 10:54:06.349"></status>
+</kw>
+<kw type="kw" name="Login With Invalid Credentials Should Fail">
+<doc></doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${VALID PASSWD}</arg>
+</arguments>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.405" level="INFO">Typing text '' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:06.473" starttime="20150809 10:54:06.405"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.473" starttime="20150809 10:54:06.404"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.474" level="INFO">Typing text 'mode' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:06.560" starttime="20150809 10:54:06.474"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.560" starttime="20150809 10:54:06.473"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.561" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.745" starttime="20150809 10:54:06.561"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.746" starttime="20150809 10:54:06.560"></status>
+</kw>
+<kw type="kw" name="resource.Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.760" level="INFO">Current location is 'http://localhost:7272/html/error.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.761" starttime="20150809 10:54:06.747"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.770" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.771" starttime="20150809 10:54:06.761"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.771" starttime="20150809 10:54:06.746"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.771" starttime="20150809 10:54:06.403"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:06.771" critical="yes" starttime="20150809 10:54:06.348"></status>
+</test>
+<test id="s1-s1-t5" name="Empty Password">
+<kw type="setup" name="resource.Go To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.773" level="INFO">Opening url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:06.815" starttime="20150809 10:54:06.773"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.830" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:06.830" starttime="20150809 10:54:06.815"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.830" starttime="20150809 10:54:06.772"></status>
+</kw>
+<kw type="kw" name="Login With Invalid Credentials Should Fail">
+<doc></doc>
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.832" level="INFO">Typing text 'demo' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:06.921" starttime="20150809 10:54:06.832"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.921" starttime="20150809 10:54:06.831"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.923" level="INFO">Typing text '' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:06.979" starttime="20150809 10:54:06.922"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:06.980" starttime="20150809 10:54:06.921"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:06.981" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.161" starttime="20150809 10:54:06.981"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.161" starttime="20150809 10:54:06.980"></status>
+</kw>
+<kw type="kw" name="resource.Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.174" level="INFO">Current location is 'http://localhost:7272/html/error.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.174" starttime="20150809 10:54:07.162"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.186" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.186" starttime="20150809 10:54:07.174"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.187" starttime="20150809 10:54:07.161"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.187" starttime="20150809 10:54:06.830"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:07.187" critical="yes" starttime="20150809 10:54:06.771"></status>
+</test>
+<test id="s1-s1-t6" name="Empty Username And Password">
+<kw type="setup" name="resource.Go To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Go To">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.189" level="INFO">Opening url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:07.230" starttime="20150809 10:54:07.189"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.240" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.240" starttime="20150809 10:54:07.230"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.241" starttime="20150809 10:54:07.188"></status>
+</kw>
+<kw type="kw" name="Login With Invalid Credentials Should Fail">
+<doc></doc>
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.243" level="INFO">Typing text '' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:07.305" starttime="20150809 10:54:07.243"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.306" starttime="20150809 10:54:07.242"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.307" level="INFO">Typing text '' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:07.363" starttime="20150809 10:54:07.307"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.364" starttime="20150809 10:54:07.306"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.365" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.542" starttime="20150809 10:54:07.365"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.542" starttime="20150809 10:54:07.364"></status>
+</kw>
+<kw type="kw" name="resource.Login Should Have Failed">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.555" level="INFO">Current location is 'http://localhost:7272/html/error.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.555" starttime="20150809 10:54:07.543"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.565" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:07.565" starttime="20150809 10:54:07.555"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.566" starttime="20150809 10:54:07.542"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:07.566" starttime="20150809 10:54:07.241"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:07.566" critical="yes" starttime="20150809 10:54:07.187"></status>
+</test>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20150809 10:54:07.690" starttime="20150809 10:54:07.567"></status>
+</kw>
+<doc>A test suite containing tests related to invalid login. These
+tests are data-driven by they nature. They use a single
+keyword, specified with Test Template setting, that is called
+with different arguments to cover different scenarios.</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20150809 10:54:07.690" starttime="20150809 10:54:00.348"></status>
+</suite>
+<suite source="G:\workspace\rf_demoapp\login_tests\valid_login.txt" id="s1-s2" name="Valid Login">
+<test id="s1-s2-t1" name="Valid Login">
+<kw type="kw" name="resource.Open Browser To Login Page">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:07.702" level="INFO">Opening browser 'firefox' to base url 'http://localhost:7272/html/'</msg>
+<status status="PASS" endtime="20150809 10:54:11.798" starttime="20150809 10:54:07.702"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20150809 10:54:11.889" starttime="20150809 10:54:11.798"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Set Selenium Speed">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20150809 10:54:11.889" starttime="20150809 10:54:11.889"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:11.917" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:11.917" starttime="20150809 10:54:11.890"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:11.918" starttime="20150809 10:54:07.701"></status>
+</kw>
+<kw type="kw" name="resource.Input Username">
+<doc></doc>
+<arguments>
+<arg>demo</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:11.919" level="INFO">Typing text 'demo' into text field 'username_field'</msg>
+<status status="PASS" endtime="20150809 10:54:12.040" starttime="20150809 10:54:11.919"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:12.040" starttime="20150809 10:54:11.918"></status>
+</kw>
+<kw type="kw" name="resource.Input Password">
+<doc></doc>
+<arguments>
+<arg>mode</arg>
+</arguments>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:12.041" level="INFO">Typing text 'mode' into text field 'password_field'</msg>
+<status status="PASS" endtime="20150809 10:54:12.128" starttime="20150809 10:54:12.041"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:12.128" starttime="20150809 10:54:12.040"></status>
+</kw>
+<kw type="kw" name="resource.Submit Credentials">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20150809 10:54:12.129" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" endtime="20150809 10:54:12.235" starttime="20150809 10:54:12.129"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:12.235" starttime="20150809 10:54:12.128"></status>
+</kw>
+<kw type="kw" name="resource.Welcome Page Should Be Open">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Selenium2Library.Location Should Be">
+<doc>Verifies that current URL is exactly `url`.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20150809 10:54:12.251" level="INFO">Current location is 'http://localhost:7272/html/welcome.html'.</msg>
+<status status="PASS" endtime="20150809 10:54:12.252" starttime="20150809 10:54:12.236"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Title Should Be">
+<doc>Verifies that current page title equals `title`.</doc>
+<arguments>
+<arg>Welcome Page</arg>
+</arguments>
+<msg timestamp="20150809 10:54:12.263" level="INFO">Page title is 'Welcome Page'.</msg>
+<status status="PASS" endtime="20150809 10:54:12.263" starttime="20150809 10:54:12.252"></status>
+</kw>
+<status status="PASS" endtime="20150809 10:54:12.264" starttime="20150809 10:54:12.235"></status>
+</kw>
+<kw type="teardown" name="Selenium2Library.Close Browser">
+<doc>Closes the current browser.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20150809 10:54:12.376" starttime="20150809 10:54:12.264"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20150809 10:54:12.376" critical="yes" starttime="20150809 10:54:07.700"></status>
+</test>
+<doc>A test suite with a single test for valid login. This test has
+a workflow that is created using keywords from the resource file.</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20150809 10:54:12.377" starttime="20150809 10:54:07.692"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20150809 10:54:12.379" starttime="20150809 10:54:00.027"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="7">Critical Tests</stat>
+<stat fail="0" pass="7">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="7" id="s1" name="Login Tests">Login Tests</stat>
+<stat fail="0" pass="6" id="s1-s1" name="Invalid Login">Login Tests.Invalid Login</stat>
+<stat fail="0" pass="1" id="s1-s2" name="Valid Login">Login Tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
